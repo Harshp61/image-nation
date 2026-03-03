@@ -176,16 +176,22 @@ function CanvasEditor({ project }) {
   useEffect(() => {
     if (!canvasEditor) return;
 
-    switch (activeTool) {
-      case "crop":
-        canvasEditor.defaultCursor = "crosshair";
-        canvasEditor.hoverCursor = "crosshair";
-        break;
-      default:
-        canvasEditor.defaultCursor = "default";
-        canvasEditor.hoverCursor = "move";
-    }
-  }, [canvasEditor, activeTool]);
+    setCanvasEditor((editor) => {
+      if (!editor) return editor;
+
+      switch (activeTool) {
+        case "crop":
+          editor.defaultCursor = "crosshair";
+          editor.hoverCursor = "crosshair";
+          break;
+        default:
+          editor.defaultCursor = "default";
+          editor.hoverCursor = "move";
+      }
+
+      return editor;
+    });
+  }, [activeTool, canvasEditor, setCanvasEditor]);
 
   useEffect(() => {
     const handleResize = () => {

@@ -5,9 +5,9 @@ import { useParams } from "next/navigation";
 import { useConvexQuery } from "@/hooks/use-convex-query";
 import { api } from "@/convex/_generated/api";
 import { Loader2, Monitor } from "lucide-react";
-import { EditorTopBar } from "./_components/editor-topbar";
-import { EditorSidebar } from "./_components/editor-sidebar";
-import CanvasEditor from "./_components/canvas";
+import { EditorTopBar } from "../../dashboard/_components/editor-topbar";
+import { EditorSidebar } from "../../dashboard/_components/editor-sidebar";
+import CanvasEditor from "../../dashboard/_components/canvas";
 import { CanvasContext } from "@/context/context";
 import { RingLoader } from "react-spinners";
 
