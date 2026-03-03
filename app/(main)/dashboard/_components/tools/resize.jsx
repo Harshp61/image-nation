@@ -112,10 +112,6 @@ export function ResizeControls({ project }) {
     setProcessingMessage("Resizing canvas...");
 
     try {
-      // Resize the canvas
-      canvasEditor.setWidth(newWidth);
-      canvasEditor.setHeight(newHeight);
-
       // Calculate and apply viewport scale
       const viewportScale = calculateViewportScale();
 
