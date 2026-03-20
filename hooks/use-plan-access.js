@@ -4,7 +4,7 @@ import { useAuth } from "@clerk/nextjs";
 export function usePlanAccess() {
   const { has } = useAuth();
 
-  const isPro = has?.({ plan: "pro" }) || false;
+  const isPro = has?.({ plan: "pro" }) || has?.({ plan: "free_trial" }) || false;
   const isFree = !isPro; // If not pro, then free (default)
 
   // Define which tools are available for each plan
